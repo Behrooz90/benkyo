@@ -1,0 +1,1 @@
+This is the folder for the little popup that comes up when clicking on the button in the extension list in the top-right corner of Chrome. A little popup loads and is populated with the contents of popup.html

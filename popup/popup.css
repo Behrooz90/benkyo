@@ -1,0 +1,48 @@
+body {
+    width: 320px;
+}
+
+button {
+    margin-top: 4px;
+    width: 150px;
+}
+
+.disable {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.checkboxWrapper, .transparencyWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.transparencyWrapper span{
+    margin-right: 6px;
+}
+
+.urlWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.urlWrapper input {
+    width: 100%;
+}
+
+.previewGif, #currentURLPreview {
+    width: 100px;
+    height: 100px;
+}
+
+.favorites button {
+    width: 100px;
+    height: 22px;
+}
+
+.root_div, .image {
+    width: 100%;
+    height: 100%;
+}

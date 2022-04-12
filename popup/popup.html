@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./popup.css">
+  </head>
+  <body>
+    <h1>GIF Overlay</h1>
+    <div class="checkboxWrapper">
+        <input type="checkbox" class="disable" id="disableCheckbox">
+        <span>Turn off GIF</span>
+    </div>
+    <div class="transparencyWrapper">
+      <span>GIF Transparency: </span>
+      <input type="range" min="1" max="101" value="50" class="slider" id="transparencySlider" step=5>
+    </div>
+    <div class="urlWrapper">
+        <div id="currentURLPreview"></div>
+        <input type="text" placeholder="URL for image/.gif" class="gifLink" id="urlInput">
+        <button id="loadCurrentUrl">Load current URL</button>
+        <button id="saveLink">Set as new overlay</button>
+        <button id="saveLinkFavorite">Save URL as favorite</button>
+    </div>
+    <div>
+        <h2>Options:</h2>
+        <div id="favorites" class="favorites"></div>
+    </div>
+    <script src="./popup.js"></script>
+  </body>
+</html>
