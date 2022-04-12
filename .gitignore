@@ -1,23 +1,39 @@
-# Compiled class file
-*.class
-
-# Log file
+# Numerous always-ignore extensions
+*.diff
+*.err
 *.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
+*.orig
+*.rej
+*.swo
+*.swp
+*.vi
 *.zip
-*.tar.gz
-*.rar
+*~
+*.sass-cache
+*.ruby-version
+*.rbenv-version
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+# OS or Editor folders
+._*
+.cache
+.DS_Store
+.idea
+.project
+.settings
+.tmproj
+*.esproj
+*.sublime-project
+*.sublime-workspace
+nbproject
+Thumbs.db
+.fseventsd
+.DocumentRevisions*
+.TemporaryItems
+.Trashes
+
+# Other paths to ignore
+.awcache
+bower_components
+node_modules
+package-lock.json
+dist
