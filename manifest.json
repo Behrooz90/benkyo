@@ -1,9 +1,9 @@
   {
 "update_url": "https://clients2.google.com/service/update2/crx",
 
-    "name": "ChromeOverlay",
-    "version": "0.0.0.3",
-    "description": "This is a chrome extension that creates an overlay on every tab with a partially transparent .gif or image, or a .mp4 or .webm gif",
+    "name": "bienkyo",
+    "version": "1.0",
+    "description": "This is a chrome extension that creates an LoFi overlay on every tab with a partially transparent GIF and website blocking feature",
     "permissions": [
       "webRequest",
       "webRequestBlocking",
