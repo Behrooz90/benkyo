@@ -38,7 +38,7 @@ function injectOverlayContent() {
     //div.style.paddingTop = "0";
     div.style.border = "none";
     div.style.bottom = "50px";
-    div.style.right = "25px";
+    div.style.right = "0px";//all the way to the right for suspended boy and girl GIFs
     document.body.appendChild(div);
 
     chrome.storage.sync.get('transparency', function(data) {
