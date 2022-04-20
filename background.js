@@ -3,8 +3,8 @@ chrome.runtime.onInstalled.addListener(function(details) {
       // only override settings on first install, not on updates
       chrome.storage.sync.set({transparency: '100'});//demo at 100
       chrome.storage.sync.set({disabled: false});
-      chrome.storage.sync.set({favorites: ["https://imagizer.imageshack.com/img923/7139/Bndd6j.gif","https://imagizer.imageshack.com/img923/3809/vkpaNa.gif","https://imagizer.imageshack.com/img924/7078/Qh80YM.gif","https://imagizer.imageshack.com/img924/1925/BfDmr4.gif"]});
-      chrome.storage.sync.set({saveLink: "https://imagizer.imageshack.com/img924/1925/BfDmr4.gif"}); //EDIT HERE FOR INITIAL IMAGE
+      chrome.storage.sync.set({favorites: ["https://imagizer.imageshack.com/img923/7139/Bndd6j.gif","https://imagizer.imageshack.com/img923/9748/BDp9GP.gif","https://imagizer.imageshack.com/img924/3373/CQYYvd.gif","https://imagizer.imageshack.com/img923/3809/vkpaNa.gif","https://imagizer.imageshack.com/img924/7078/Qh80YM.gif","https://imagizer.imageshack.com/img924/1925/BfDmr4.gif"]});
+      chrome.storage.sync.set({saveLink: "https://imagizer.imageshack.com/img923/9748/BDp9GP.gif"}); //EDIT HERE FOR INITIAL IMAGE
       chrome.storage.sync.set({previewLink: ""});
     }
 

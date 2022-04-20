@@ -37,11 +37,12 @@ function injectOverlayContent() {
     div.style.alignItems = "end";
     //div.style.paddingTop = "0";
     div.style.border = "none";
-    div.style.bottom = "50px";
+    div.style.bottom = "0px";
     div.style.right = "0px";//all the way to the right for suspended boy and girl GIFs
     document.body.appendChild(div);
+    //$( ".overlay" ).draggable({ handle: ".overlay" });
 
-    chrome.storage.sync.get('transparency', function(data) {
+    chrome.storage.sync.get('transparency', function(data) { //FUTURE FEATURE: make changes here for mouseover transparency
         var existingRootNode = document.getElementById(ROOT_DIV_ID);
         existingRootNode.style.opacity = (data.transparency / 100.0);
     });
@@ -133,10 +134,14 @@ function createContent(link) {
     }
 
     // injecting the image
+    //#img; {
+    //    cursor: move;
+    //}
     var img = document.createElement("img");
     img.style.width = "100%";
     img.style.height = "100%";
     img.style.objectFit = "contain";
+    //$( ".overlay" ).draggable({ handle: ".img" });
     img.setAttribute("src", link);
     return img;
 }
