@@ -1,0 +1,66 @@
+@font-face {
+    font-family: "Futura PT";
+    src: url("/futuraFont/Futura\ Heavy\ font.ttf") format("ttf");
+}
+
+body {
+    width: 286px;
+    height: 334px;
+    display: block;
+    margin: 0px; 
+    background: #2D2D2D;
+}
+
+h1 {
+    position: absolute;
+    width: 170.97px;
+    height: 44.54px;
+    left: 27px;
+    top: 18px;
+    margin-top: 0px;
+
+    font-family: 'Futura Heavy font';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
+
+    color: #C4C4C4;
+}
+
+div{
+    display:inline-block;
+    position: absolute;
+    width: 99px;
+    height: 95px;
+    background: #393939;
+    box-shadow: 3.44052px 3.44052px 3.44052px rgba(0, 0, 0, 0.25);
+    border-radius: 8.60129px;
+}
+
+div.characterIcon{
+    width: 68px;
+    height: 68px;
+    left: 45px;
+    top: 84px;
+}
+
+div.characterButton{
+    left: 29px;
+    top: 80px;
+}
+
+div.pomodoroButton{
+    left: 158px;
+    top: 80px;
+}
+
+div.audioButton{
+    left: 29px;
+    top: 208px;
+}
+
+div.blockerButton{
+    left: 158px;
+    top: 208px;
+}

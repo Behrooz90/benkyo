@@ -38,7 +38,7 @@
     ],
     "options_page": "popup/popup.html",
     "page_action": {
-      "default_popup": "popup/popup.html",
+      "default_popup": "popup/mainMenu.html",
       "default_icon": {
         "16": "images/OverlayIcon.png"
       },
