@@ -1,7 +1,7 @@
   {
 "update_url": "https://clients2.google.com/service/update2/crx",
 
-    "name": "bienkyo",
+    "name": "benkyo",
     "version": "1.0",
     "description": "This is a chrome extension that creates an LoFi overlay on every tab with a partially transparent GIF and website blocking feature",
     "permissions": [
