@@ -1,0 +1,79 @@
+/* html, body {
+	width: 100%;
+	height: 100%;
+} */
+
+body {
+    width: 320px;
+}
+
+#editor {
+	width:  100%;
+	height: 100%;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: initial;
+    width: 200px;
+	height: 30px;
+	border: 1px solid black;
+	border-radius: 20px;
+	text-align: center;
+	line-height: 30px;
+	margin: 50x;
+}
+
+a.button:hover {
+    background: #ccc;
+	cursor: pointer;
+}
+
+#go1 {
+	width: 100px;
+	height: 30px;
+	border: 1px solid black;
+	border-radius: 20px;
+	text-align: center;
+	line-height: 30px;
+	margin: 50x;
+}
+
+#go1:hover {
+	background: #ccc;
+	cursor: pointer;
+}
+
+#go2 {
+	width: 100px;
+	height: 30px;
+	border: 1px solid black;
+	border-radius: 20px;
+	text-align: center;
+	line-height: 30px;
+	margin: 50x;
+}
+
+#go2:hover {
+	background: #ccc;
+	cursor: pointer;
+}
+
+#go3 {
+	width: 100px;
+	height: 30px;
+	border: 1px solid black;
+	border-radius: 20px;
+	text-align: center;
+	line-height: 30px;
+	margin: 50x;
+}
+
+#go3:hover {
+	background: #ccc;
+	cursor: pointer;
+}
+
