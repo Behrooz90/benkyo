@@ -40,10 +40,10 @@
     "page_action": {
       "default_popup": "popup/mainMenu.html",
       "default_icon": {
-        "16": "images/bookLogo.png"
+        "16": "images/o.png"
       },
       "icons": {
-        "16": "images/bookLogo.png"
+        "16": "images/o.png"
       }
     },
     "manifest_version": 2

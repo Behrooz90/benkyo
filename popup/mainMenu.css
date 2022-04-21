@@ -1,0 +1,51 @@
+body{
+    position: relative;
+    display: block;
+    width: 286px;
+    height: 211px;
+    margin: 0px;
+    background: #2D2D2D;
+}
+
+div.title{
+    position: absolute;
+    width: 259px;
+    height: 24px;
+    left: 4px;
+    top: 21px;
+}
+
+div.background_for_title{
+    position: absolute;
+    width: 286px;
+    height: 51px;
+    left: 0px;
+    top: 0px;
+}
+
+div.characterButton{
+    position: absolute;
+    width: 99px;
+    height: 95px;
+    left: 29.28px;
+    top: 80px;
+}
+
+div.audioButton{
+    position: absolute;
+    width: 99.87px;
+    height: 95.84px;
+    left: 158px;
+    top: 79px;
+}
+
+div.masterVolume{
+    position: absolute;
+    width: 23.17px;
+    height: 23.17px;
+    left: 256px;
+    top: 22px;
+}
+
+
+
