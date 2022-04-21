@@ -1,7 +1,7 @@
-@font-face {
+/* @font-face {
     font-family: "Futura PT";
     src: url("/futuraFont/Futura\ Heavy\ font.ttf") format("ttf");
-}
+} */
 
 body {
     width: 286px;
@@ -19,11 +19,12 @@ h1 {
     top: 18px;
     margin-top: 0px;
 
-    font-family: 'Futura Heavy font';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 38px;
+    font-family: 'Futura';
+    font-size: 30px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 600; 
+    line-height: 39px;
 
     color: #C4C4C4;
 }
@@ -34,7 +35,7 @@ div{
     width: 99px;
     height: 95px;
     background: #393939;
-    box-shadow: 3.44052px 3.44052px 3.44052px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 3.44052px 3.44052px 3.44052px rgba(0, 0, 0, 0.25); */
     border-radius: 8.60129px;
 }
 
@@ -63,4 +64,49 @@ div.audioButton{
 div.blockerButton{
     left: 158px;
     top: 208px;
+}
+
+a.mainButton{
+    width: 100%;
+    height: 100%;
+}
+
+img.mainIcon{
+    position: absolute;
+    display: block;
+    top: 4px;
+    left: 16px;
+    width: 68px;
+    height: 68px;
+}
+
+h4{
+    margin: 0px;
+    position: absolute;
+    bottom: 5px;
+
+    font-family: 'Futura';
+    font-style: normal;
+    font-variant: normal; 
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+
+    color: #606060;
+}
+
+h4.characterTitle{
+    left: 20px;
+}
+
+h4.watchTitle{
+    left: 20px;
+}
+
+h4.audioTitle{
+    left: 12px;
+}
+
+h4.blockerTitle{
+    left: 12px;
 }

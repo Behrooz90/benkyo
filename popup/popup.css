@@ -1,10 +1,49 @@
 body {
     width: 320px;
+    background: #2D2D2D;
+}
+
+h1 {
+    display: block;
+    /* position: absolute; */
+    width: 170.97px;
+    height: 44.54px;
+    /* left: 27px;
+    top: 18px; */
+    margin-bottom: 5px; 
+
+    font-family: 'Futura';
+    font-size: 30px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 600; 
+    line-height: 39px;
+
+    color: #C4C4C4;
+}
+
+span {
+    color: #C4C4C4;
+}
+
+h2 {
+    color: #C4C4C4;
+}
+
+div.favorites{
+    color: #C4C4C4;
+}
+
+input{
+    background-color: #393939;
+    color: #C4C4C4;
 }
 
 button {
     margin-top: 4px;
     width: 150px;
+    background-color: #393939;
+    color: #C4C4C4;
 }
 
 .disable {
