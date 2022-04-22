@@ -1,2 +1,2 @@
-# bienkyo
+# benkyo
 Lofi focus tool 
