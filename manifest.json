@@ -22,11 +22,6 @@
     "content_scripts": [
       {
         "matches": ["*://*/*"],
-        "js": [ "content/overlayContent.js" ],
-        "exclude_matches" : ["https://studybuddy2022.github.io/blocked.html"]
-      },
-      {
-        "matches": ["*://*/*"],
         "js": [ "content/parseIframe.js" ],
         "all_frames": true
       },
