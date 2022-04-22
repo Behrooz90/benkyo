@@ -22,13 +22,12 @@
     "content_scripts": [
       {
         "matches": ["*://*/*"],
+        "js": [ "content/overlayContent.js" ]
+      },
+      {
+        "matches": ["*://*/*"],
         "js": [ "content/parseIframe.js" ],
         "all_frames": true
-      },
-
-      {
-        "matches" : ["http://*/*", "https://*/*"],
-        "js" : ["content/content.js"]
       }
     ],
     "web_accessible_resources": [
