@@ -134,3 +134,7 @@ div.masterVolume{
     left: 256px;
     top: 22px;
 }
+
+div.urlWrapper{
+    display: none;
+}
