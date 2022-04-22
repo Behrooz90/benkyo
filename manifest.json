@@ -16,6 +16,9 @@
       "scripts": ["background.js"],
       "persistent": true
     },
+    "icons": {
+      "128":"images/Vector_128.png"
+    },
     "content_scripts": [
       {
         "matches": ["*://*/*"],
@@ -40,10 +43,12 @@
     "page_action": {
       "default_popup": "popup/mainMenu.html",
       "default_icon": {
-        "16": "images/o.png"
+        "128": "images/Vector_128.png",
+        "48": "images/Vector_48.png",
+        "16": "images/Logo_16.png"
       },
       "icons": {
-        "16": "images/o.png"
+        "128": "images/Vector_128.png"
       }
     },
     "manifest_version": 2
