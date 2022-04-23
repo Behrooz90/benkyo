@@ -3,6 +3,17 @@ let transparencySlider = document.getElementById('transparencySlider');
 let disableCheckbox = document.getElementById('disableCheckbox');
 let currentURLPreview = document.getElementById('currentURLPreview');
 
+//slider
+var slider = document.getElementById("transparencySlider");
+var start_value = slider.getAttribute("value");
+var x = start_value;
+var color = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(57, 57, 57)' + x + '%)';
+slider.style.background = color;
+slider.addEventListener("mousemove", function() {
+    x = slider.value;
+    slider.style.background = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(57, 57, 57)' + x + '%)';
+});
+
 // buttons
 let loadCurrentUrl = document.getElementById('loadCurrentUrl');
 let saveLink = document.getElementById('saveLink');

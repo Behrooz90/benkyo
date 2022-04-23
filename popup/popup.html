@@ -18,15 +18,23 @@
     <div class="masterVolume">
       <img src="/images/master_Volume.svg" alt="master_Volume" class="mainIcon" />
     </div>
-    <div class="checkboxWrapper">
-        <input type="checkbox" class="disable" id="disableCheckbox">
-        <span>Don't show</span>
+    <div class="preview">
+      <img src="/images/left_arrow.svg" alt="left_arrow" class="arrow" id = "left_arrow"/>
+      <div class="previewFrame">
+        <div id="currentURLPreview"></div>
+      </div>
+      <img src="/images/right_arrow.svg" alt="right_arrow" class="arrow" id = "right_arrow"/>
     </div>
+    <br>
     <div class="transparencyWrapper">
-      <span>GIF Transparency: </span>
-      <input type="range" min="1" max="101" value="50" class="slider" id="transparencySlider" step=5>
+      <!-- <span>GIF Transparency: </span> -->
+      <input type="range" min="1" max="101" value="101" class="slider" id="transparencySlider">
     </div>
-    <div id="currentURLPreview"></div>
+    <br>
+    <div class="checkboxWrapper">
+      <input type="checkbox" class="disable" id="disableCheckbox">
+      <span>Don't show</span>
+    </div>  
     <div class="urlWrapper">
         <input type="text" placeholder="URL for image/.gif" class="gifLink" id="urlInput">
         <button id="loadCurrentUrl">Load current URL</button>
@@ -39,7 +47,7 @@
     </div>
     <div class="overlay" draggable = "true">
       <div class="header"></div>
-    <script src="./popup.js"></script>
     </div>
+    <script src="./popup.js"></script>
   </body>
 </html>
