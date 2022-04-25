@@ -2,7 +2,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
     if (details.reason == "install") {
       // only override settings on first install, not on updates
       chrome.storage.sync.set({transparency: '100'});//demo at 100
-      chrome.storage.sync.set({disabled: false});
+      chrome.storage.sync.set({disabled: true}); // set default disabled value to true 
       chrome.storage.sync.set({favorites: ["https://imagizer.imageshack.com/img923/9748/BDp9GP.gif", "https://imagizer.imageshack.com/img924/8222/XQnTmO.gif"]});
       chrome.storage.sync.set({saveLink: "https://imagizer.imageshack.com/img924/8222/XQnTmO.gif"}); //EDIT HERE FOR INITIAL IMAGE
       chrome.storage.sync.set({previewLink: ""});
