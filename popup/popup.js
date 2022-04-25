@@ -3,7 +3,7 @@ let transparencySlider = document.getElementById('transparencySlider');
 let disableCheckbox = document.getElementById('disableCheckbox');
 let currentURLPreview = document.getElementById('currentURLPreview');
 
-//slider
+// transparerncy slider
 var slider = document.getElementById("transparencySlider");
 var start_value = slider.getAttribute("value");
 var x = start_value;

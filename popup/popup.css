@@ -169,7 +169,7 @@ div.masterVolume{
     -webkit-appearance: none;
     width: 145px;
     height: 4px;
-    background: linear-gradient(90deg, #6E97FF 60%, #393939 60%);
+    background: linear-gradient(90deg, #6E97FF 100%, #393939 60%);
     border-radius: 38.4459px;
     opacity: 0.75;
     outline: none;
