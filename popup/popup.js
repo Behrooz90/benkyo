@@ -50,8 +50,10 @@ function renderFavorites(favorites) {
   }
   // add new children
   favorites.forEach(favorite => {
+    const left_arrow = document.getElementById("left_arrow");
+    const right_arrow = document.getElementById("right_arrow");
     const favDiv = document.createElement("div");
-    const text = document.createElement("div");
+    // const text = document.createElement("div");
     const loadFavorite = document.createElement("button");
     loadFavorite.textContent = "Switch GIF"; //instead of Load URL
     const deleteFavorite = document.createElement("button");
@@ -59,15 +61,35 @@ function renderFavorites(favorites) {
     const preview = document.createElement("div");
     preview.className = "previewGif";
     writeNewContent(favorite, preview);
-    text.textContent = favorite;
-    favoritesRoot.appendChild(favDiv);
-    favDiv.appendChild(text);
-    favDiv.appendChild(preview);
-    favDiv.appendChild(loadFavorite);
-    favDiv.appendChild(deleteFavorite);
+    // text.textContent = favorite;
+    // favoritesRoot.appendChild(favDiv);
+    // favDiv.appendChild(text);
+    // favDiv.appendChild(preview);
+    // favDiv.appendChild(loadFavorite);
+    // favDiv.appendChild(deleteFavorite);
     
+    left_arrow.setAttribute('customLink', "https://imagizer.imageshack.com/img924/8222/XQnTmO.gif");
+    right_arrow.setAttribute('customLink', "https://imagizer.imageshack.com/img923/9748/BDp9GP.gif");
     loadFavorite.setAttribute('customlink', favorite);
     deleteFavorite.setAttribute('customlink', favorite);
+
+    left_arrow.onclick = function (ev) {
+      const favorite = ev.target.getAttribute('customlink');
+      urlInput.value = favorite;
+      writeNewContent(favorite, currentURLPreview);
+      chrome.storage.sync.set({saveLink: favorite}, function() {
+        console.log('newLink is ' + favorite);
+      });
+    };
+
+    right_arrow.onclick = function (ev) {
+      const favorite = ev.target.getAttribute('customlink');
+      urlInput.value = favorite;
+      writeNewContent(favorite, currentURLPreview);
+      chrome.storage.sync.set({saveLink: favorite}, function() {
+        console.log('newLink is ' + favorite);
+      });
+    };
 
     loadFavorite.onclick = function (ev) {
       const favorite = ev.target.getAttribute('customlink');
