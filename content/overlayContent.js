@@ -37,7 +37,7 @@ function injectOverlayContent() {
     div.style.alignItems = "end";
     //div.style.paddingTop = "0";
     div.style.border = "none";
-    div.style.bottom = "-5.5px"; //exactly bottom of screen
+    div.style.bottom = "-3.5px"; //exactly bottom of screen
     div.style.right = "0px";//all the way to the right for suspended boy and girl GIFs
     document.body.appendChild(div);
     //$( ".overlay" ).draggable({ handle: ".overlay" });
