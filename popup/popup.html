@@ -25,15 +25,19 @@
       </div>
       <img src="/images/right_arrow.svg" alt="right_arrow" class="arrow" id = "right_arrow"/>
     </div>
-    <br>
     <div class="transparencyWrapper">
       <!-- <span>GIF Transparency: </span> -->
       <input type="range" min="0" max="100" value="100" class="slider" id="transparencySlider">
     </div>
     <br>
     <div class="checkboxWrapper">
-      <input type="checkbox" class="disable" id="disableCheckbox" checked>
-      <span>Show</span>
+      <div class = "checkboxFrame">
+        <label class = "switch">
+          <input type="checkbox" class="disable" id="disableCheckbox" checked>
+          <span class = "toggle"></span>
+        </label>
+        <img src="/images/Show.svg" alt="show_titile" class="show" />
+      </div>
     </div>  
     <div class="urlWrapper">
         <input type="text" placeholder="URL for image/.gif" class="gifLink" id="urlInput">
