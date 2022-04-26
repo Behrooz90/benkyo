@@ -17,7 +17,9 @@
       "persistent": true
     },
     "icons": {
-      "128":"images/Vector_128.png"
+      "128":"images/Vector_128.png",
+      "48": "images/Vector_48.png",
+      "16": "images/Vector_16.png"
     },
     "content_scripts": [
       {
