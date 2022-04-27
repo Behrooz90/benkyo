@@ -7,39 +7,61 @@
     <div class="background_for_Title">
       <img src="/images/title_background.svg" alt="background_title" class="mainIcon" />
     </div>
+
     <div class="back_button">
       <a href="./mainMenu.html" class="mainButton">
         <img src="/images/back_arrow.svg" alt="back" class="mainIcon" />
       </a>
     </div>
+
     <div class="title">
-      <img src="/images/benkyo.svg" alt="title" class="mainIcon" />
+      <img src="/images/benkyo_new.svg" alt="title" class="mainIcon" />
     </div>
+
     <div class="masterVolume">
       <img src="/images/master_Volume.svg" alt="master_Volume" class="mainIcon" />
     </div>
-    <div class="checkboxWrapper">
-        <input type="checkbox" class="disable" id="disableCheckbox">
-        <span>Don't show</span>
+
+    <div class="preview">
+      <img src="/images/left_arrow.svg" alt="left_arrow" class="arrow" id = "left_arrow"/>
+      <div class="previewFrame">
+        <div id ="currentURLPreview"></div>
+        <div id = "previewWall"></div>
+      </div>
+      <img src="/images/right_arrow.svg" alt="right_arrow" class="arrow" id = "right_arrow"/>
     </div>
+
     <div class="transparencyWrapper">
-      <span>GIF Transparency: </span>
-      <input type="range" min="1" max="101" value="50" class="slider" id="transparencySlider" step=5>
-    </div>
+      <!-- <span>GIF Transparency: </span> -->
+      <input type="range" min="0" max="100" value="100" class="slider" id="transparencySlider">
+    </div><br>
+
+    <div class="checkboxWrapper">
+      <div class = "checkboxFrame">
+        <label class = "switch">
+          <input type="checkbox" class="disable" id="disableCheckbox" checked>
+          <span class = "toggle"></span>
+        </label>
+        <img src="/images/Show.svg" alt="show_titile" class="show" />
+      </div>
+    </div> 
+
     <div class="urlWrapper">
-        <div id="currentURLPreview"></div>
         <input type="text" placeholder="URL for image/.gif" class="gifLink" id="urlInput">
         <button id="loadCurrentUrl">Load current URL</button>
         <button id="saveLink">Set as new overlay</button>
         <button id="saveLinkFavorite">Save URL as favorite</button>
     </div>
+
     <div>
-        <h2>Options:</h2>
+        <!-- <h2>Options:</h2> -->
         <div id="favorites" class="favorites"></div>
     </div>
+
     <div class="overlay" draggable = "true">
       <div class="header"></div>
-    <script src="./popup.js"></script>
     </div>
+
+    <script src="./popup.js"></script>
   </body>
 </html>

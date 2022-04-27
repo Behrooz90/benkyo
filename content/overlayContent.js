@@ -37,7 +37,7 @@ function injectOverlayContent() {
     div.style.alignItems = "end";
     //div.style.paddingTop = "0";
     div.style.border = "none";
-    div.style.bottom = "0px";
+    div.style.bottom = "-3.5px"; //exactly bottom of screen
     div.style.right = "0px";//all the way to the right for suspended boy and girl GIFs
     document.body.appendChild(div);
     //$( ".overlay" ).draggable({ handle: ".overlay" });
@@ -49,7 +49,7 @@ function injectOverlayContent() {
     
     chrome.storage.sync.get('disabled', function(data) {
         var existingRootNode = document.getElementById(ROOT_DIV_ID);
-        if (data.disabled) {
+        if (!data.disabled) {
             existingRootNode.style.opacity = 0;
         }
     });
@@ -76,10 +76,12 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
             case 'disabled':
                 if (storageChange.newValue) {
                     // if disabled, rip out of the DOM
-                    removeOverlayContent();
+                    // removeOverlayContent();
+                    injectOverlayContent();
                 } else {
                     // if enabled, insert into DOM
-                    injectOverlayContent();
+                    // injectOverlayContent();
+                    removeOverlayContent();
                 }
                 break;
             case 'saveLink':
