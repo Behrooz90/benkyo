@@ -43,3 +43,9 @@ chrome.webRequest.onHeadersReceived.addListener(info => {
     urls: [ "<all_urls>" ], // match all pages
     types: [ "sub_frame" ] // for framing only
 }, ["blocking", "responseHeaders"]);
+
+// AUDIO MIXER FUNCTIONALITY
+var song = document.createElement("audio");
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  
+});

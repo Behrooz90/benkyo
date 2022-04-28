@@ -3,17 +3,6 @@ let transparencySlider = document.getElementById('transparencySlider');
 let disableCheckbox = document.getElementById('disableCheckbox');
 let currentURLPreview = document.getElementById('currentURLPreview');
 
-// transparerncy slider
-var slider = document.getElementById("transparencySlider");
-var start_value = slider.getAttribute("value");
-var x = start_value;
-var color = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(57, 57, 57)' + x + '%)';
-slider.style.background = color;
-slider.addEventListener("mousemove", function() {
-    x = slider.value;
-    slider.style.background = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(57, 57, 57)' + x + '%)';
-});
-
 // buttons
 let loadCurrentUrl = document.getElementById('loadCurrentUrl');
 let saveLink = document.getElementById('saveLink');
@@ -185,6 +174,9 @@ transparencySlider.oninput = function(element) {
       chrome.storage.sync.set({transparency: newTransparency}, function() {
         console.log('transparency is ' + newTransparency);
       });
+      chrome.storage.sync.get('transparency', function(data) {
+        console.log('double check ' + data.transparency);
+      });
     });
   }, MILLIS_PER_MINUTE / MAX_RATE_PER_MINUTE);
 };
@@ -260,3 +252,14 @@ chrome.runtime.onMessage.addListener(
     }
   }
 );
+
+// transparerncy slider
+chrome.storage.sync.get('transparency', function(data) {
+  var x = data.transparency;
+  var color = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(57, 57, 57)' + x + '%)';
+  transparencySlider.style.background = color;
+});
+transparencySlider.addEventListener("mousemove", function() {
+    var x = transparencySlider.value;
+    transparencySlider.style.background = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(57, 57, 57)' + x + '%)';
+});
