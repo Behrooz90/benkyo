@@ -174,9 +174,6 @@ transparencySlider.oninput = function(element) {
       chrome.storage.sync.set({transparency: newTransparency}, function() {
         console.log('transparency is ' + newTransparency);
       });
-      chrome.storage.sync.get('transparency', function(data) {
-        console.log('double check ' + data.transparency);
-      });
     });
   }, MILLIS_PER_MINUTE / MAX_RATE_PER_MINUTE);
 };
@@ -260,6 +257,6 @@ chrome.storage.sync.get('transparency', function(data) {
   transparencySlider.style.background = color;
 });
 transparencySlider.addEventListener("mousemove", function() {
-    var x = transparencySlider.value;
-    transparencySlider.style.background = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(57, 57, 57)' + x + '%)';
+  var x = transparencySlider.value;
+  transparencySlider.style.background = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(57, 57, 57)' + x + '%)';
 });

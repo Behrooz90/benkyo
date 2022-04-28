@@ -77,3 +77,49 @@ div.masterVolume{
 #birdBox {
     left: 207px;
 }
+
+#beatVolume{
+    left: -20px;
+}
+
+#rainVolume{
+    left: 38px;
+}
+
+#fireVolume{
+    left: 95px;
+}
+
+#birdVolume{
+    left: 151px;
+} 
+
+.slider{
+    position: absolute;
+    bottom: 135px;
+    -webkit-appearance: none;
+    width: 152px;
+    height: 4px;
+    background: linear-gradient(90deg, #6E97FF 50%, #2D2D2D 50%);
+    border-radius: 38.4459px;
+    opacity: 0.75;
+    outline: none;
+    transform: rotate(-90deg);
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.slider:hover{
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 28px;
+    background: #6E97FF;
+    border: 2.10855px solid #2D2D2D;
+    box-sizing: border-box;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+} 
