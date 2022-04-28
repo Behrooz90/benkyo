@@ -3,7 +3,7 @@
 
     "name": "benkyo",
     "version": "1.0",
-    "description": "This is a chrome extension that creates an LoFi overlay on every tab with a partially transparent GIF and website blocking feature",
+    "description": "This is a chrome extension that creates a transparent GIF overlay on the bottom right corner of every tab",
     "permissions": [
       "webRequest",
       "webRequestBlocking",
