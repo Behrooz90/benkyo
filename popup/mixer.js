@@ -23,7 +23,6 @@ chrome.storage.sync.get('birdVolume', function(data) {
     bird_volume.setAttribute('value', data.birdVolume);
 });
 
-
 var timer1 = null;
 const MAX_RATE_PER_MINUTE = 110;
 const MILLIS_PER_MINUTE = 60*1000;
@@ -35,6 +34,11 @@ beat_volume.oninput = function(element) {
       chrome.storage.sync.set({beatVolume: newVolume}, function() {
         console.log('beat volume is ' + newVolume);
       });
+      var volume_Value = newVolume / 100;
+      chrome.runtime.sendMessage({
+        type: "beatVolume",
+        value: volume_Value
+      }, function(response) {});
     });
   }, MILLIS_PER_MINUTE / MAX_RATE_PER_MINUTE);
 };
@@ -48,6 +52,11 @@ rain_volume.oninput = function(element) {
       chrome.storage.sync.set({rainVolume: newVolume}, function() {
         console.log('rain volume is ' + newVolume);
       });
+      var volume_Value = newVolume / 100;
+      chrome.runtime.sendMessage({
+        type: "rainVolume",
+        value: volume_Value
+      }, function(response) {});
     });
   }, MILLIS_PER_MINUTE / MAX_RATE_PER_MINUTE);
 };
@@ -61,6 +70,11 @@ fire_volume.oninput = function(element) {
       chrome.storage.sync.set({fireVolume: newVolume}, function() {
         console.log('fire volume is ' + newVolume);
       });
+      var volume_Value = newVolume / 100;
+      chrome.runtime.sendMessage({
+        type: "fireVolume",
+        value: volume_Value
+      }, function(response) {});
     });
   }, MILLIS_PER_MINUTE / MAX_RATE_PER_MINUTE);
 };
@@ -74,6 +88,11 @@ bird_volume.oninput = function(element) {
       chrome.storage.sync.set({birdVolume: newVolume}, function() {
         console.log('bird volume is ' + newVolume);
       });
+      var volume_Value = newVolume / 100;
+      chrome.runtime.sendMessage({
+        type: "birdVolume",
+        value: volume_Value
+      }, function(response) {});
     });
   }, MILLIS_PER_MINUTE / MAX_RATE_PER_MINUTE);
 };
@@ -86,6 +105,11 @@ chrome.storage.sync.get('beatVolume', function(data) {
 beat_volume.addEventListener("mousemove", function() {
     var x = beat_volume.value;
     beat_volume.style.background = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(45, 45, 45)' + x + '%)';
+    var volume_Value = beat_volume.value / 100;
+    chrome.runtime.sendMessage({
+        type: "beatVolume",
+        value: volume_Value
+    }, function(response) {});
 });
 
 chrome.storage.sync.get('rainVolume', function(data) {
@@ -96,6 +120,11 @@ chrome.storage.sync.get('rainVolume', function(data) {
 rain_volume.addEventListener("mousemove", function() {
     var x = rain_volume.value;
     rain_volume.style.background = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(45, 45, 45)' + x + '%)';
+    var volume_Value = newVolume / 100;
+      chrome.runtime.sendMessage({
+        type: "rainVolume",
+        value: volume_Value
+      }, function(response) {});
 });
 
 chrome.storage.sync.get('fireVolume', function(data) {
@@ -106,6 +135,11 @@ chrome.storage.sync.get('fireVolume', function(data) {
 fire_volume.addEventListener("mousemove", function() {
     var x = fire_volume.value;
     fire_volume.style.background = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(45, 45, 45)' + x + '%)';
+    var volume_Value = newVolume / 100;
+      chrome.runtime.sendMessage({
+        type: "fireVolume",
+        value: volume_Value
+      }, function(response) {});
 });
 
 chrome.storage.sync.get('birdVolume', function(data) {
@@ -116,4 +150,9 @@ chrome.storage.sync.get('birdVolume', function(data) {
 bird_volume.addEventListener("mousemove", function() {
     var x = bird_volume.value;
     bird_volume.style.background = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(45, 45, 45)' + x + '%)';
+    var volume_Value = newVolume / 100;
+      chrome.runtime.sendMessage({
+        type: "birdVolume",
+        value: volume_Value
+      }, function(response) {});
 });

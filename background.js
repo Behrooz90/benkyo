@@ -1,10 +1,12 @@
 chrome.runtime.onInstalled.addListener(function(details) {
     if (details.reason == "install") {
       // only override settings on first install, not on updates
-      chrome.storage.sync.set({beatVolume: '50'});
-      chrome.storage.sync.set({rainVolume: '50'});
-      chrome.storage.sync.set({fireVolume: '50'});
-      chrome.storage.sync.set({birdVolume: '50'});
+      chrome.storage.sync.set({beatVolume: '0.5'});
+      chrome.storage.sync.set({rainVolume: '0.5'});
+      chrome.storage.sync.set({fireVolume: '0.5'});
+      chrome.storage.sync.set({birdVolume: '0.5'});
+      // chrome.storage.sync.set({muted: true});
+
       chrome.storage.sync.set({transparency: '100'});//demo at 100
       chrome.storage.sync.set({disabled: true}); // set default disabled value to true 
       chrome.storage.sync.set({favorites: ["https://imagizer.imageshack.com/img923/9748/BDp9GP.gif", "https://imagizer.imageshack.com/img924/8222/XQnTmO.gif"]});
@@ -49,7 +51,67 @@ chrome.webRequest.onHeadersReceived.addListener(info => {
 }, ["blocking", "responseHeaders"]);
 
 // AUDIO MIXER FUNCTIONALITY
-var song = document.createElement("audio");
+var beatAudio = document.createElement("audio");
+var rainAudio = document.createElement("audio");
+var fireAudio = document.createElement("audio");
+var birdAudio = document.createElement("audio");
+
+// LOOP ALWAYS TRUE
+beatAudio.loop = true;
+rainAudio.loop = true;
+fireAudio.loop = true;
+birdAudio.loop = true;
+
+// DEFAULT SET TO MUTED
+// beatAudio.muted = true;
+// rainAudio.muted = true;
+// fireAudio.muted = true;
+// birdAudio.muted = true;
+
+// ASSIGN THE SOURCE FOR EACH VARIABLE
+beatAudio.src = "/audio/cozy-place.mp3";
+rainAudio.src = "/audio/rain-forest.mp3";
+fireAudio.src = "/audio/fireplace.mp3";
+birdAudio.src = "/audio/spring-bird.mp3";
+
+// PLAY THE AUDIO
+beatAudio.play();
+rainAudio.play();
+fireAudio.play();
+birdAudio.play(); 
+
+// DEFAULT VOLUME 
+chrome.storage.sync.get('beatVolume', function(data) {
+  beatAudio.volume = data.beatVolume;
+});
+
+chrome.storage.sync.get('rainVolume', function(data) {
+  rainAudio.volume = data.rainVolume;
+});
+
+chrome.storage.sync.get('fireVolume', function(data) {
+  fireAudio.volume = data.fireVolume;
+})
+
+chrome.storage.sync.get('birdVolume', function(data) {
+  birdAudio.volume = data.birdVolume;
+});
+
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  
+  // CHANGING BEAT VOLUME
+  if (request.type == "beatVolume") {
+    beatAudio.volume = request.value;
+  }
+  // CHANGING RAIN VOLUME
+  if (request.type == "rainVolume") {
+    rainAudio.volume = request.value;
+  }
+  // CHANGING FIRE VOLUME
+  if (request.type == "fireVolume") {
+    fireAudio.volume = request.value;
+  }
+  // CHANGING BIRD VOLUME
+  if (request.type == "birdVolume") {
+    birdAudio.volume = request.value;
+  }
 });
