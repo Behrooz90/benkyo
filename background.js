@@ -1,11 +1,25 @@
 chrome.runtime.onInstalled.addListener(function(details) {
     if (details.reason == "install") {
       // only override settings on first install, not on updates
-      chrome.storage.sync.set({beatVolume: '0.5'});
-      chrome.storage.sync.set({rainVolume: '0.5'});
-      chrome.storage.sync.set({fireVolume: '0.5'});
-      chrome.storage.sync.set({birdVolume: '0.5'});
+      chrome.storage.sync.set({beatVolume: '50'});
+      chrome.storage.sync.set({rainVolume: '50'});
+      chrome.storage.sync.set({fireVolume: '50'});
+      chrome.storage.sync.set({birdVolume: '50'});
       // chrome.storage.sync.set({muted: true});
+
+      // DEFAULT VOLUME 
+      chrome.storage.sync.get('beatVolume', function(data) {
+        beatAudio.volume = data.beatVolume / 100;
+      });
+      chrome.storage.sync.get('rainVolume', function(data) {
+        rainAudio.volume = data.rainVolume / 100;
+      });
+      chrome.storage.sync.get('fireVolume', function(data) {
+        fireAudio.volume = data.fireVolume / 100;
+      })
+      chrome.storage.sync.get('birdVolume', function(data) {
+        birdAudio.volume = data.birdVolume / 100;
+      });
 
       chrome.storage.sync.set({transparency: '100'});//demo at 100
       chrome.storage.sync.set({disabled: true}); // set default disabled value to true 
@@ -80,22 +94,6 @@ rainAudio.play();
 fireAudio.play();
 birdAudio.play(); 
 
-// DEFAULT VOLUME 
-chrome.storage.sync.get('beatVolume', function(data) {
-  beatAudio.volume = data.beatVolume;
-});
-
-chrome.storage.sync.get('rainVolume', function(data) {
-  rainAudio.volume = data.rainVolume;
-});
-
-chrome.storage.sync.get('fireVolume', function(data) {
-  fireAudio.volume = data.fireVolume;
-})
-
-chrome.storage.sync.get('birdVolume', function(data) {
-  birdAudio.volume = data.birdVolume;
-});
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   // CHANGING BEAT VOLUME
