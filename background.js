@@ -5,7 +5,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
       chrome.storage.sync.set({rainVolume: '50'});
       chrome.storage.sync.set({fireVolume: '50'});
       chrome.storage.sync.set({birdVolume: '50'});
-      // chrome.storage.sync.set({muted: true});
+      chrome.storage.sync.set({muted: true});
 
       // DEFAULT VOLUME 
       chrome.storage.sync.get('beatVolume', function(data) {
@@ -19,6 +19,14 @@ chrome.runtime.onInstalled.addListener(function(details) {
       })
       chrome.storage.sync.get('birdVolume', function(data) {
         birdAudio.volume = data.birdVolume / 100;
+      });
+      
+      // DEFAULT SET TO MUTED
+      chrome.storage.sync.get('muted', function(data){
+        beatAudio.muted = data.muted;
+        rainAudio.muted = data.muted;
+        fireAudio.muted = data.muted;
+        birdAudio.muted = data.muted;
       });
 
       chrome.storage.sync.set({transparency: '100'});//demo at 100
@@ -111,5 +119,20 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   // CHANGING BIRD VOLUME
   if (request.type == "birdVolume") {
     birdAudio.volume = request.value;
+  }
+
+  // MASTER VOLUME (MUTED OR UNMUTED)
+  if (request.type == "muted") {
+    if (request.value == true) {
+      beatAudio.muted = true;
+      rainAudio.muted = true;
+      fireAudio.muted = true;
+      birdAudio.muted = true;
+    } else {
+      beatAudio.muted = false;
+      rainAudio.muted = false;
+      fireAudio.muted = false;
+      birdAudio.muted = false;
+    }
   }
 });

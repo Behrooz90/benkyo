@@ -39,12 +39,48 @@ div.audioButton{
     top: 79px;
 }
 
-div.masterVolume{
+.masterVolume{
     position: absolute;
-    width: 23.17px;
-    height: 23.17px;
-    left: 256px;
-    top: 22px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    left: 255px;
+    top: 21px;
+}
+
+.masterVolume input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.master_Volume {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 0.5px;
+    top: 0.5px;
+    cursor: pointer;
+    background: none;
+    -webkit-transition: .4s;
+    transition: .4s;
+    
+}
+
+.master_Volume:before {
+    width: 23px;
+    height: 23px;
+    content: "";
+    position: absolute;
+    right: 0.5px;
+    top: 0.5px; 
+    background-image: url(/images/muted_Volume.svg);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .master_Volume:before {
+    background-image: url(/images/master_Volume.svg);
 }
 
 
