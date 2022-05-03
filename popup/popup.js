@@ -2,6 +2,7 @@ let urlInput = document.getElementById('urlInput');
 let transparencySlider = document.getElementById('transparencySlider');
 let disableCheckbox = document.getElementById('disableCheckbox');
 let currentURLPreview = document.getElementById('currentURLPreview');
+let mutedCheckbox = document.getElementById('mutedCheckbox');
 
 // buttons
 let loadCurrentUrl = document.getElementById('loadCurrentUrl');
@@ -29,6 +30,10 @@ chrome.storage.sync.get('transparency', function(data) {
 chrome.storage.sync.get('favorites', function(data) {
   const favorites = data.favorites;
   renderFavorites(favorites);
+});
+
+chrome.storage.sync.get('muted', function(data) {
+  mutedCheckbox.checked = data.muted;
 });
 
 function renderFavorites(favorites) {
@@ -260,3 +265,14 @@ transparencySlider.addEventListener("mousemove", function() {
   var x = transparencySlider.value;
   transparencySlider.style.background = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(57, 57, 57)' + x + '%)';
 });
+
+mutedCheckbox.onchange = function(event) {
+  const isMuted = event.target.checked;
+  chrome.storage.sync.set({muted : isMuted}, function() {
+    console.log('muted is ' + isMuted);
+  });
+  chrome.runtime.sendMessage({
+      type: "muted",
+      value: isMuted
+  });
+}

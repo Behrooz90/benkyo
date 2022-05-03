@@ -85,10 +85,13 @@ fireAudio.loop = true;
 birdAudio.loop = true;
 
 // DEFAULT SET TO MUTED
-// beatAudio.muted = true;
-// rainAudio.muted = true;
-// fireAudio.muted = true;
-// birdAudio.muted = true;
+chrome.storage.sync.set({muted: true});
+chrome.storage.sync.get('muted', function(data){
+  beatAudio.muted = data.muted;
+  rainAudio.muted = data.muted;
+  fireAudio.muted = data.muted;
+  birdAudio.muted = data.muted;
+});
 
 // ASSIGN THE SOURCE FOR EACH VARIABLE
 beatAudio.src = "/audio/cozy-place.mp3";
@@ -123,6 +126,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
   // MASTER VOLUME (MUTED OR UNMUTED)
   if (request.type == "muted") {
+    beatAudio.muted = true;
+    rainAudio.muted = true;
+    fireAudio.muted = true;
+    birdAudio.muted = true;
     if (request.value == true) {
       beatAudio.muted = true;
       rainAudio.muted = true;

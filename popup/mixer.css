@@ -70,13 +70,13 @@ div.background_for_title{
     position: absolute;
     right: 0.5px;
     top: 0.5px; 
-    background-image: url(/images/muted_Volume.svg);
+    background-image: url(/images/master_Volume.svg);
     -webkit-transition: .4s;
     transition: .4s;
 }
 
 input:checked + .master_Volume:before {
-    background-image: url(/images/master_Volume.svg);
+    background-image: url(/images/muted_Volume.svg);
 }
 
 .frame {

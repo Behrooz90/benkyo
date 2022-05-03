@@ -2,6 +2,7 @@ let beat_volume = document.getElementById('beatVolume');
 let rain_volume = document.getElementById('rainVolume');
 let fire_volume = document.getElementById('fireVolume');
 let bird_volume = document.getElementById('birdVolume');
+let mutedCheckbox = document.getElementById('mutedCheckbox');
 
 chrome.storage.sync.get('beatVolume', function(data) {
     beat_volume.value = data.beatVolume;
@@ -21,6 +22,10 @@ chrome.storage.sync.get('fireVolume', function(data) {
 chrome.storage.sync.get('birdVolume', function(data) {
     bird_volume.value = data.birdVolume;
     bird_volume.setAttribute('value', data.birdVolume);
+});
+
+chrome.storage.sync.get('muted', function(data) {
+    mutedCheckbox.checked = data.muted;
 });
 
 var timer1 = null;
@@ -156,3 +161,14 @@ bird_volume.addEventListener("mousemove", function() {
         value: volume_Value
       }, function(response) {});
 });
+
+mutedCheckbox.onchange = function(event) {
+    const isMuted = event.target.checked;
+    chrome.storage.sync.set({muted : isMuted}, function() {
+      console.log('muted is ' + isMuted);
+    });
+    chrome.runtime.sendMessage({
+        type: "muted",
+        value: isMuted
+    });
+}
