@@ -63,7 +63,7 @@ function renderFavorites(favorites) {
     // favDiv.appendChild(deleteFavorite);
     
     left_arrow.setAttribute('customLink', "https://imagizer.imageshack.com/img924/8222/XQnTmO.gif");
-    right_arrow.setAttribute('customLink', "https://imagizer.imageshack.com/img923/9748/BDp9GP.gif");
+    right_arrow.setAttribute('customLink', "https://imagizer.imageshack.com/img922/613/8tV63t.gif");
     loadFavorite.setAttribute('customlink', favorite);
     deleteFavorite.setAttribute('customlink', favorite);
 
