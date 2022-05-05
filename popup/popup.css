@@ -220,8 +220,8 @@ div.audioButton{
     top: 0.5px;
     cursor: pointer;
     background: none;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0s;
+    transition: 0s;
     
 }
 
@@ -233,8 +233,8 @@ div.audioButton{
     right: 0.5px;
     top: 0.5px; 
     background-image: url(/images/master_Volume.svg);
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0s;
+    transition: 0s;
 }
 
 input:checked + .master_Volume:before {
