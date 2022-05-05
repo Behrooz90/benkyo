@@ -197,12 +197,48 @@ div.audioButton{
     top: 79px;
 }
 
-div.masterVolume{
+.masterVolume{
     position: absolute;
-    width: 23.17px;
-    height: 23.17px;
-    left: 256px;
-    top: 22px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    left: 255px;
+    top: 21px;
+}
+
+.masterVolume input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.master_Volume {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 0.5px;
+    top: 0.5px;
+    cursor: pointer;
+    background: none;
+    -webkit-transition: 0s;
+    transition: 0s;
+    
+}
+
+.master_Volume:before {
+    width: 23px;
+    height: 23px;
+    content: "";
+    position: absolute;
+    right: 0.5px;
+    top: 0.5px; 
+    background-image: url(/images/master_Volume.svg);
+    -webkit-transition: 0s;
+    transition: 0s;
+}
+
+input:checked + .master_Volume:before {
+    background-image: url(/images/muted_Volume.svg);
 }
 
 .preview{
@@ -242,7 +278,7 @@ div.masterVolume{
     -webkit-appearance: none;
     width: 145px;
     height: 4px;
-    background: linear-gradient(90deg, #6E97FF 100%, #393939 60%);
+    background: linear-gradient(90deg, #6E97FF 0%, #393939 100%);
     border-radius: 38.4459px;
     opacity: 0.75;
     outline: none;

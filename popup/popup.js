@@ -2,17 +2,7 @@ let urlInput = document.getElementById('urlInput');
 let transparencySlider = document.getElementById('transparencySlider');
 let disableCheckbox = document.getElementById('disableCheckbox');
 let currentURLPreview = document.getElementById('currentURLPreview');
-
-// transparerncy slider
-var slider = document.getElementById("transparencySlider");
-var start_value = slider.getAttribute("value");
-var x = start_value;
-var color = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(57, 57, 57)' + x + '%)';
-slider.style.background = color;
-slider.addEventListener("mousemove", function() {
-    x = slider.value;
-    slider.style.background = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(57, 57, 57)' + x + '%)';
-});
+let mutedCheckbox = document.getElementById('mutedCheckbox');
 
 // buttons
 let loadCurrentUrl = document.getElementById('loadCurrentUrl');
@@ -42,6 +32,10 @@ chrome.storage.sync.get('favorites', function(data) {
   renderFavorites(favorites);
 });
 
+chrome.storage.sync.get('muted', function(data) {
+  mutedCheckbox.checked = data.muted;
+});
+
 function renderFavorites(favorites) {
   const favoritesRoot = document.getElementById('favorites');
   // remove previous children
@@ -69,7 +63,7 @@ function renderFavorites(favorites) {
     // favDiv.appendChild(deleteFavorite);
     
     left_arrow.setAttribute('customLink', "https://imagizer.imageshack.com/img924/8222/XQnTmO.gif");
-    right_arrow.setAttribute('customLink', "https://imagizer.imageshack.com/img923/9748/BDp9GP.gif");
+    right_arrow.setAttribute('customLink', "https://imagizer.imageshack.com/img922/613/8tV63t.gif");
     loadFavorite.setAttribute('customlink', favorite);
     deleteFavorite.setAttribute('customlink', favorite);
 
@@ -260,3 +254,25 @@ chrome.runtime.onMessage.addListener(
     }
   }
 );
+
+// transparerncy slider
+chrome.storage.sync.get('transparency', function(data) {
+  var x = data.transparency;
+  var color = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(57, 57, 57)' + x + '%)';
+  transparencySlider.style.background = color;
+});
+transparencySlider.addEventListener("mousemove", function() {
+  var x = transparencySlider.value;
+  transparencySlider.style.background = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(57, 57, 57)' + x + '%)';
+});
+
+mutedCheckbox.onchange = function(event) {
+  const isMuted = event.target.checked;
+  chrome.storage.sync.set({muted : isMuted}, function() {
+    console.log('muted is ' + isMuted);
+  });
+  chrome.runtime.sendMessage({
+      type: "muted",
+      value: isMuted
+  });
+}

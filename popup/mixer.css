@@ -1,0 +1,161 @@
+/*html, body {
+	width: 100%;
+	height: 100%;
+}*/
+
+body {
+    width: 286px;
+    height: 334px;
+    margin: 0px;
+    background: #2D2D2D;
+    display: inline-block;
+}
+
+div.title{
+    position: absolute;
+    width: 259px;
+    height: 24px;
+    left: 27px;
+    top: 21px;
+}
+
+div.back_button{
+    position: absolute;
+    width: 31px;
+    height: 29px;
+    left: 0px;
+    top: 16px;  /* had to trial and error this, for some reason figma value was off*/
+}
+
+div.background_for_title{
+    position: absolute;
+    width: 286px;
+    height: 51px;
+    left: 0px;
+    top: 0px;
+}
+
+.masterVolume{
+    position: absolute;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    left: 255px;
+    top: 21px;
+}
+
+.masterVolume input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.master_Volume {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 0.5px;
+    top: 0.5px;
+    cursor: pointer;
+    background: none;
+    -webkit-transition: 0s;
+    transition: 0s;
+    
+}
+
+.master_Volume:before {
+    width: 23px;
+    height: 23px;
+    content: "";
+    position: absolute;
+    right: 0.5px;
+    top: 0.5px; 
+    background-image: url(/images/master_Volume.svg);
+    -webkit-transition: 0s;
+    transition: 0s;
+}
+
+input:checked + .master_Volume:before {
+    background-image: url(/images/muted_Volume.svg);
+}
+
+.frame {
+    position: absolute;
+    width: 228px;
+    height: 207px;
+    left: 29px;
+    top: 80px;
+
+    background: #393939;
+    border-radius: 13.2558px;
+
+}
+
+.audioElement {
+    position: absolute;
+    width: 43.22px;
+    height: 20.07px;
+    top: 88px;
+}
+
+#beatBox {
+    left: 37px;
+}
+
+#rainBox {
+    left: 93.34px;
+}
+
+#fireBox {
+    left: 149.67px;
+}
+
+#birdBox {
+    left: 207px;
+}
+
+#beatVolume{
+    left: -20px;
+}
+
+#rainVolume{
+    left: 38px;
+}
+
+#fireVolume{
+    left: 95px;
+}
+
+#birdVolume{
+    left: 151px;
+} 
+
+.slider{
+    position: absolute;
+    bottom: 135px;
+    -webkit-appearance: none;
+    width: 152px;
+    height: 4px;
+    background: linear-gradient(90deg, #6E97FF 50%, #2D2D2D 50%);
+    border-radius: 38.4459px;
+    opacity: 0.75;
+    outline: none;
+    transform: rotate(-90deg);
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.slider:hover{
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 28px;
+    background: #6E97FF;
+    border: 2.10855px solid #393939;
+    box-sizing: border-box;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+} 
