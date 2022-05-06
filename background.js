@@ -94,9 +94,9 @@ chrome.storage.sync.get('muted', function(data){
 });
 
 // ASSIGN THE SOURCE FOR EACH VARIABLE
-beatAudio.src = "/audio/cozy-place.mp3";
+beatAudio.src = "/audio/wild-strawberry.mp3";
 rainAudio.src = "/audio/rain-forest.mp3";
-fireAudio.src = "/audio/fireplace.mp3";
+fireAudio.src = "/audio/brown-noise.mp3";
 birdAudio.src = "/audio/spring-bird.mp3";
 
 // PLAY THE AUDIO
