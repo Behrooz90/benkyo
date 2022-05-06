@@ -6,7 +6,6 @@
     "description": "This is a chrome extension that creates a transparent GIF overlay on the bottom right corner of every tab",
     "permissions": [
       "webRequest",
-      "webRequestBlocking",
       "declarativeContent",
       "storage",
       "http://*/",
