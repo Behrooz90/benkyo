@@ -32,7 +32,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
       chrome.storage.sync.set({transparency: '100'});//demo at 100
       chrome.storage.sync.set({disabled: true}); // set default disabled value to true 
       chrome.storage.sync.set({favorites: ["https://imagizer.imageshack.com/img922/613/8tV63t.gif", "https://imagizer.imageshack.com/img923/2862/Ee6Ze7.gif","https://imagizer.imageshack.com/img924/4489/NUUnVf.gif","https://imagizer.imageshack.com/img923/6933/bAUjz4.gif"]});
-      chrome.storage.sync.set({saveLink: "https://imagizer.imageshack.com/img923/2862/Ee6Ze7.gif"}); //EDIT HERE FOR INITIAL IMAGE
+      chrome.storage.sync.set({saveLink: "https://imagizer.imageshack.com/img924/4489/NUUnVf.gif"}); //EDIT HERE FOR INITIAL IMAGE
       chrome.storage.sync.set({previewLink: ""});
     }
 
