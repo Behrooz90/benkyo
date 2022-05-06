@@ -4,6 +4,10 @@ let disableCheckbox = document.getElementById('disableCheckbox');
 let currentURLPreview = document.getElementById('currentURLPreview');
 let mutedCheckbox = document.getElementById('mutedCheckbox');
 
+var left_arrow = document.getElementById("left_arrow");
+var right_arrow = document.getElementById("right_arrow");
+var index = 2;
+
 // buttons
 let loadCurrentUrl = document.getElementById('loadCurrentUrl');
 let saveLink = document.getElementById('saveLink');
@@ -42,10 +46,34 @@ function renderFavorites(favorites) {
   while (favoritesRoot.firstChild) {
     favoritesRoot.firstChild.remove();
   }
+
+  // arrow functionality
+  right_arrow.onclick = function() {
+    if (index >= favorites.length - 1) index = -1;
+    index++;
+    const favorite = favorites[index];
+    urlInput.value = favorite;
+      writeNewContent(favorite, currentURLPreview);
+      chrome.storage.sync.set({saveLink: favorite}, function() {
+        console.log('newLink is ' + favorite);
+      });
+  }
+
+  left_arrow.onclick = function() {
+    if (index <= 0) index = favorites.length;
+    index--;
+    const favorite = favorites[index];
+    urlInput.value = favorite;
+      writeNewContent(favorite, currentURLPreview);
+      chrome.storage.sync.set({saveLink: favorite}, function() {
+        console.log('newLink is ' + favorite);
+      });
+  }
+
   // add new children
   favorites.forEach(favorite => {
-    const left_arrow = document.getElementById("left_arrow");
-    const right_arrow = document.getElementById("right_arrow");
+    // const left_arrow = document.getElementById("left_arrow");
+    // const right_arrow = document.getElementById("right_arrow");
     const favDiv = document.createElement("div");
     // const text = document.createElement("div");
     const loadFavorite = document.createElement("button");
@@ -62,28 +90,28 @@ function renderFavorites(favorites) {
     // favDiv.appendChild(loadFavorite);
     // favDiv.appendChild(deleteFavorite);
     
-    left_arrow.setAttribute('customLink', "https://imagizer.imageshack.com/img924/4489/NUUnVf.gif");
-    right_arrow.setAttribute('customLink', "https://imagizer.imageshack.com/img922/613/8tV63t.gif");
+    // left_arrow.setAttribute('customLink', "https://imagizer.imageshack.com/img924/4489/NUUnVf.gif");
+    // right_arrow.setAttribute('customLink', "https://imagizer.imageshack.com/img922/613/8tV63t.gif");
     loadFavorite.setAttribute('customlink', favorite);
     deleteFavorite.setAttribute('customlink', favorite);
 
-    left_arrow.onclick = function (ev) {
-      const favorite = ev.target.getAttribute('customlink');
-      urlInput.value = favorite;
-      writeNewContent(favorite, currentURLPreview);
-      chrome.storage.sync.set({saveLink: favorite}, function() {
-        console.log('newLink is ' + favorite);
-      });
-    };
+    // left_arrow.onclick = function (ev) {
+    //   const favorite = ev.target.getAttribute('customlink');
+    //   urlInput.value = favorite;
+    //   writeNewContent(favorite, currentURLPreview);
+    //   chrome.storage.sync.set({saveLink: favorite}, function() {
+    //     console.log('newLink is ' + favorite);
+    //   });
+    // };
 
-    right_arrow.onclick = function (ev) {
-      const favorite = ev.target.getAttribute('customlink');
-      urlInput.value = favorite;
-      writeNewContent(favorite, currentURLPreview);
-      chrome.storage.sync.set({saveLink: favorite}, function() {
-        console.log('newLink is ' + favorite);
-      });
-    };
+    // right_arrow.onclick = function (ev) {
+    //   const favorite = ev.target.getAttribute('customlink');
+    //   urlInput.value = favorite;
+    //   writeNewContent(favorite, currentURLPreview);
+    //   chrome.storage.sync.set({saveLink: favorite}, function() {
+    //     console.log('newLink is ' + favorite);
+    //   });
+    // };
 
     loadFavorite.onclick = function (ev) {
       const favorite = ev.target.getAttribute('customlink');
