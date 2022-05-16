@@ -125,7 +125,7 @@ chrome.storage.sync.get('rainVolume', function(data) {
 rain_volume.addEventListener("mousemove", function() {
     var x = rain_volume.value;
     rain_volume.style.background = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(45, 45, 45)' + x + '%)';
-    var volume_Value = newVolume / 100;
+    var volume_Value = rain_volume.value / 100;
       chrome.runtime.sendMessage({
         type: "rainVolume",
         value: volume_Value
@@ -140,7 +140,7 @@ chrome.storage.sync.get('fireVolume', function(data) {
 fire_volume.addEventListener("mousemove", function() {
     var x = fire_volume.value;
     fire_volume.style.background = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(45, 45, 45)' + x + '%)';
-    var volume_Value = newVolume / 100;
+    var volume_Value = fire_volume.value / 100;
       chrome.runtime.sendMessage({
         type: "fireVolume",
         value: volume_Value
@@ -155,7 +155,7 @@ chrome.storage.sync.get('birdVolume', function(data) {
 bird_volume.addEventListener("mousemove", function() {
     var x = bird_volume.value;
     bird_volume.style.background = 'linear-gradient(90deg, rgb(110,151,255)' + x + '% , rgb(45, 45, 45)' + x + '%)';
-    var volume_Value = newVolume / 100;
+    var volume_Value = bird_volume.value / 100;
       chrome.runtime.sendMessage({
         type: "birdVolume",
         value: volume_Value

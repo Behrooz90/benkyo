@@ -7,9 +7,7 @@
     "permissions": [
       "webRequest",
       "declarativeContent",
-      "storage",
-      "http://*/",
-      "https://*/"
+      "storage"
     ],
     "background": {
       "scripts": ["background.js"],
