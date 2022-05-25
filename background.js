@@ -84,6 +84,20 @@ rainAudio.loop = true;
 fireAudio.loop = true;
 birdAudio.loop = true;
 
+// DEFAULT VOLUME 
+chrome.storage.sync.get('beatVolume', function(data) {
+  beatAudio.volume = data.beatVolume / 100;
+});
+chrome.storage.sync.get('rainVolume', function(data) {
+  rainAudio.volume = data.rainVolume / 100;
+});
+chrome.storage.sync.get('fireVolume', function(data) {
+  fireAudio.volume = data.fireVolume / 100;
+})
+chrome.storage.sync.get('birdVolume', function(data) {
+  birdAudio.volume = data.birdVolume / 100;
+});
+
 // DEFAULT SET TO MUTED
 chrome.storage.sync.set({muted: true});
 chrome.storage.sync.get('muted', function(data){
