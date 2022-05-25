@@ -3,7 +3,7 @@
 
     "name": "benkyo",
     "version": "1.0",
-    "description": "This is a chrome extension that creates a transparent GIF overlay on the bottom right corner of every tab",
+    "description": "Benkyo has developed a tool to minimize distractions and increase productivity in the most stress-free way possible.",
     "permissions": [
       "webRequest",
       "declarativeContent",
