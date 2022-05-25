@@ -2,7 +2,7 @@
 "update_url": "https://clients2.google.com/service/update2/crx",
 
     "name": "benkyo",
-    "version": "1.0",
+    "version": "2.0",
     "description": "Benkyo has developed a tool to minimize distractions and increase productivity in the most stress-free way possible.",
     "permissions": [
       "webRequest",
