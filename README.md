@@ -5,11 +5,11 @@ We're a humanizing productivity tool that helps you focus while working on a com
 
 This project was created in Knox College StartUp Term '22 by:
 
-Behrooz Dinyarian (Development)
-James Adamson (UI Design, Graphic Design)
-Kelly Fisk (Product Design, Marketing)
-Jessie Quach (Developer)
-Aki Wakayama (Business, Marketing)
+Behrooz Dinyarian (Development) <br/>
+James Adamson (UI Design, Graphic Design) <br/>
+Kelly Fisk (Product Design, Marketing) <br/>
+Jessie Quach (Developer) <br/>
+Aki Wakayama (Business, Marketing) <br/>
 
 ![alt text](https://lh3.googleusercontent.com/j6Yle5aQW90gNmq1O_OEKoool3ZO4ez41ScJxEZSrs7VCXlGFahvB9NmGhRwssSfS_xIUhurm4jYOEfHM3EXhX3p=w640-h400-e365-rj-sc0x00ffffff)
 ![alt text](https://lh3.googleusercontent.com/_ctm8Sty8mMsoo_LHzoFiZgDVg9aNXdnKqR0Rm4IUrEbxwsKNaQx4mK3b3RLE03HcXqxv3WDDVXstb8hLXBoBv7z0g=w640-h400-e365-rj-sc0x00ffffff)
