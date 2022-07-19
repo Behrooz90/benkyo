@@ -3,6 +3,8 @@
 Benkyo has developed a tool to minimize distractions and increase productivity in the most stress-free way possible.
 We're a humanizing productivity tool that helps you focus while working on a computer task. Our tool creates a transparent GIF overlay on the bottom right corner of every tab. Unlike traditional focus tools that are invasive and anxiety inducing, Benkyō motivates you by bringing the best out of you. Benkyō’s in-depth customization allows you to recreate your favorite study spots, whether it be a coffee shop with relaxing ambient vibes or a library where you meet up with your study group. 
 
+To install Benkyo, ask to be added as a tester and visit us at the Chrome Webstore [here](https://chrome.google.com/webstore/detail/benkyo/mjkahgfimpgphjimbhoihhnjkkgjpmbh/).
+
 This project was created in Knox College StartUp Term '22 by:
 
 Behrooz Dinyarian (Development) <br/>
